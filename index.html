@@ -55,7 +55,7 @@
 
       <!-- Étape 1 : Simulation URDF / Gazebo -->
       <div class="progress-item">
-        <h3>1. Simulation du robot dans Gazebo</h3>
+        <h3>1. Création du robot dans Gazebo</h3>
         <p>
           J'ai créé une simulation de ce futur robot sous la forme d'un fichier
           <strong>.urdf</strong> comprenant deux axes de rotation et une caméra.
@@ -76,7 +76,7 @@
         <p>
           La simulation Gazebo communique avec ROS2 via un <strong>bridge</strong> bidirectionnel :
           les données capteurs (caméra, commandes clavier — et plus tard détecteur de distance et
-          capteur de contact) sont publiées sur des topics ROS2, tandis que le robot reçoit les
+          capteur de contact) sont publiées sur des topics Gazebo convertis sur des topics ROS2, tandis qu'inversement, le robot reçoit les
           commandes en s'abonnant aux topics correspondants.
         </p>
         <figure>
@@ -93,7 +93,9 @@
         <p>
           J'ai intégré le modèle d'intelligence artificielle <strong>YOLOv8</strong> pour
           reconnaître les animaux en temps réel et récupérer des données utiles (position sur
-          l'image, boîte englobante…) grâce à <strong>OpenCV</strong>.
+          l'image, boîte englobante…) grâce à <strong>OpenCV</strong>. Il existe des versions plus récentes de YOLO, 
+          mais le projet ayant pour vocation d'être importé sur <strong>Raspberry Pi</strong>, 
+          j'ai préféré éviter les modèles les plus lourds.
         </p>
         <figure>
           <video controls>
@@ -112,7 +114,7 @@
         <p>
           Ce code de détection a été intégré dans un nœud ROS2 afin de le tester directement
           dans Gazebo. Pour ce test, un <strong>cheval</strong> a été utilisé à la place d'une poule
-          (un modèle de cheval étant disponible dans Gazebo Fuel), afin de vérifier que le robot
+          (un modèle de cheval étant disponible dans <strong>Gazebo Fuel</strong>), afin de vérifier que le robot
           est bien capable de <strong>suivre un animal en mouvement</strong>.
         </p>
         <figure>
