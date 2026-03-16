@@ -3,107 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nico Branas</title>
+  <title>Nico Branas – run_chicken</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
     <h1>Nico Branas</h1>
-    <p class="subtitle">Bienvenue sur mon site</p>
+    <p class="subtitle">Projet run_chicken – Canon à eau repousseur de poules</p>
   </header>
 
   <nav>
-    <a href="#photos">Photos</a>
-    <a href="#videos">Vidéos</a>
-    <a href="#contact">Contact</a>
+    <a href="#resume">Résumé</a>
+    <a href="#avancee">Avancée du projet</a>
   </nav>
 
   <main>
 
-    <!-- Photos section -->
-    <section id="photos">
-      <h2>Photos</h2>
-      <div class="photo-grid">
+    <!-- Partie 1 : Résumé du projet -->
+    <section id="resume">
+      <h2>Résumé du projet</h2>
 
-        <div class="photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zm-5-7a2 2 0 1 0-4 0 2 2 0 0 0 4 0zm-7 5 3-4 2.5 3.33L14 14l3 4H6l2-3z"/>
-          </svg>
-          <span>Photo 1</span>
-        </div>
+      <p>
+        <a href="https://github.com/nico-branas/run_chicken" target="_blank" rel="noopener noreferrer">run_chicken</a>
+        est un projet robotique dont le but est de développer un <strong>canon à eau repousseur de poules</strong>.
+        L'objectif est d'empêcher les poules — et uniquement les poules — d'accéder à certains endroits,
+        comme une terrasse, en les dissuadant grâce à un jet d'eau automatique.
+      </p>
 
-        <div class="photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zm-5-7a2 2 0 1 0-4 0 2 2 0 0 0 4 0zm-7 5 3-4 2.5 3.33L14 14l3 4H6l2-3z"/>
-          </svg>
-          <span>Photo 2</span>
-        </div>
+      <h3>Phase actuelle</h3>
+      <p>
+        Le projet est actuellement en <strong>phase de développement sur simulateur</strong> :
+        <a href="https://docs.ros.org/en/jazzy/" target="_blank" rel="noopener noreferrer">ROS2 Jazzy</a> et
+        <a href="https://gazebosim.org/docs/harmonic/getstarted/" target="_blank" rel="noopener noreferrer">Gazebo Harmonic</a>.
+      </p>
 
-        <div class="photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zm-5-7a2 2 0 1 0-4 0 2 2 0 0 0 4 0zm-7 5 3-4 2.5 3.33L14 14l3 4H6l2-3z"/>
-          </svg>
-          <span>Photo 3</span>
-        </div>
-
-        <div class="photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zm-5-7a2 2 0 1 0-4 0 2 2 0 0 0 4 0zm-7 5 3-4 2.5 3.33L14 14l3 4H6l2-3z"/>
-          </svg>
-          <span>Photo 4</span>
-        </div>
-
-        <div class="photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zm-5-7a2 2 0 1 0-4 0 2 2 0 0 0 4 0zm-7 5 3-4 2.5 3.33L14 14l3 4H6l2-3z"/>
-          </svg>
-          <span>Photo 5</span>
-        </div>
-
-        <div class="photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zm-2 0H5V5h14v14zm-5-7a2 2 0 1 0-4 0 2 2 0 0 0 4 0zm-7 5 3-4 2.5 3.33L14 14l3 4H6l2-3z"/>
-          </svg>
-          <span>Photo 6</span>
-        </div>
-
-      </div>
+      <h3>Prochaines étapes</h3>
+      <ul class="steps-list">
+        <li>Conception du prototype sur <strong>Solidworks</strong></li>
+        <li>Impression <strong>3D</strong> du châssis et des pièces mécaniques</li>
+        <li>Réalisation d'un prototype physique avec un <strong>Raspberry Pi</strong></li>
+      </ul>
     </section>
 
-    <!-- Videos section -->
-    <section id="videos">
-      <h2>Vidéos</h2>
-      <div class="video-grid">
+    <!-- Partie 2 : Avancée du projet -->
+    <section id="avancee">
+      <h2>Avancée du projet</h2>
 
-        <div class="video-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-          <span>Vidéo 1</span>
-        </div>
-
-        <div class="video-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-          <span>Vidéo 2</span>
-        </div>
-
-        <div class="video-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-          <span>Vidéo 3</span>
-        </div>
-
+      <!-- Étape 1 : Simulation URDF / Gazebo -->
+      <div class="progress-item">
+        <h3>1. Simulation du robot dans Gazebo</h3>
+        <p>
+          J'ai créé une simulation de ce futur robot sous la forme d'un fichier
+          <strong>.urdf</strong> comprenant deux axes de rotation et une caméra.
+          Ce modèle est ensuite placé dans un monde <strong>.sdf</strong> Gazebo
+          pour tester ses mouvements dans un environnement virtuel.
+        </p>
+        <figure>
+          <img src="images/robot_gazebo.png" alt="Robot run_chicken dans Gazebo" />
+          <figcaption>Le robot run_chicken simulé dans Gazebo Harmonic</figcaption>
+        </figure>
       </div>
-    </section>
 
-    <!-- Contact section -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Pour me contacter, envoyez un message à : <strong>contact@example.com</strong></p>
+      <!-- Étape 2 : Bridge ROS2 / Gazebo -->
+      <div class="progress-item">
+        <h3>2. Communication ROS2 ↔ Gazebo via un bridge</h3>
+        <p>
+          La simulation Gazebo communique avec ROS2 via un <strong>bridge</strong> bidirectionnel :
+          les données capteurs (caméra, commandes clavier — et plus tard détecteur de distance et
+          capteur de contact) sont publiées sur des topics ROS2, tandis que le robot reçoit les
+          commandes en s'abonnant aux topics correspondants.
+        </p>
+        <figure>
+          <img src="images/rqt_graph.png" alt="Graphe RQT montrant les topics ROS2" />
+          <figcaption>Graphe RQT représentant les topics ROS2 échangés entre Gazebo et les nœuds de contrôle</figcaption>
+        </figure>
+      </div>
+
+      <!-- Étape 3 : Détection IA YOLOv8 -->
+      <div class="progress-item">
+        <h3>3. Détection d'animaux avec YOLOv8 et OpenCV</h3>
+        <p>
+          J'ai intégré le modèle d'intelligence artificielle <strong>YOLOv8</strong> pour
+          reconnaître les animaux en temps réel et récupérer des données utiles (position sur
+          l'image, boîte englobante…) grâce à <strong>OpenCV</strong>.
+        </p>
+        <figure>
+          <video controls>
+            <source src="videos/IA_poule.webm" type="video/webm" />
+            Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+          </video>
+          <figcaption>Démonstration de la détection de poules par YOLOv8</figcaption>
+        </figure>
+      </div>
+
+      <!-- Étape 4 : Intégration ROS2 dans Gazebo -->
+      <div class="progress-item">
+        <h3>4. Intégration du code IA dans ROS2 / Gazebo</h3>
+        <p>
+          Ce code de détection a été intégré dans un nœud ROS2 afin de le tester directement
+          dans Gazebo. Pour ce test, un <strong>cheval</strong> a été utilisé à la place d'une poule
+          (un modèle de cheval étant disponible dans Gazebo Fuel), afin de vérifier que le robot
+          est bien capable de <strong>suivre un animal en mouvement</strong>.
+        </p>
+        <figure>
+          <video controls>
+            <source src="videos/IA_robot.webm" type="video/webm" />
+            Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+          </video>
+          <figcaption>Le robot run_chicken suivant un animal détecté par YOLOv8 dans Gazebo</figcaption>
+        </figure>
+      </div>
+
     </section>
 
   </main>
