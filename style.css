@@ -145,3 +145,83 @@ footer {
   color: #718096;
   font-size: 0.875rem;
 }
+
+/* Project sections */
+section p {
+  margin-bottom: 1rem;
+  max-width: 800px;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  color: #2d3748;
+  margin: 1.25rem 0 0.5rem;
+}
+
+section a {
+  color: #3182ce;
+  text-decoration: underline;
+}
+
+section a:hover {
+  color: #63b3ed;
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+}
+
+.steps-list li {
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  position: relative;
+  border-left: 3px solid #63b3ed;
+  margin-bottom: 0.5rem;
+  background: #edf2f7;
+  border-radius: 0 6px 6px 0;
+  padding-left: 1rem;
+}
+
+/* Progress items */
+.progress-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.progress-item h3 {
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+  border-left: 4px solid #63b3ed;
+}
+
+.progress-item p {
+  margin-bottom: 1.25rem;
+}
+
+.progress-item figure {
+  margin: 0;
+}
+
+.progress-item figure img,
+.progress-item figure video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.progress-item figure figcaption {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #718096;
+  font-style: italic;
+}
