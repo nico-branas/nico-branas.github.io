@@ -33,17 +33,16 @@
         comme une terrasse, en les dissuadant grâce à un jet d'eau automatique.
       </p>
 
-      <h3>Phase actuelle</h3>
       <p>
         Le projet est actuellement en <strong>phase de développement sur simulateur</strong> :
         <a href="https://docs.ros.org/en/jazzy/" target="_blank" rel="noopener noreferrer">ROS2 Jazzy</a> et
         <a href="https://gazebosim.org/docs/harmonic/getstarted/" target="_blank" rel="noopener noreferrer">Gazebo Harmonic</a>.
+        <strong>(Il est donc codé en C++ et Python)</strong>
       </p>
 
-      <h3>Prochaines étapes</h3>
+      <h3>Etapes de développement à venir</h3>
       <ul class="steps-list">
         <li>Ajout de divers capteurs et actionneurs</li>
-        <li>Implémentation du suivi de trajectoires</li>
         <li>Conception du prototype sur <strong>Solidworks</strong></li>
         <li>Impression <strong>3D</strong> du châssis et des pièces mécaniques</li>
         <li>Réalisation d'un prototype physique avec un <strong>Raspberry Pi</strong></li>
@@ -109,7 +108,7 @@
 
       <br>
 
-      <!-- Étape 4 : Intégration ROS2 dans Gazebo -->
+      <!-- Étape 4 : Intégration de l'IA -->
       <div class="progress-item">
         <h3>4. Intégration du code IA dans ROS2 / Gazebo</h3>
         <p>
@@ -125,7 +124,25 @@
             <source src="videos/IA_robot.webm" type="video/webm" />
             Votre navigateur ne supporte pas la lecture de vidéos HTML5.
           </video>
-          <figcaption>Le robot run_chicken suivant un animal détecté par YOLOv8 dans Gazebo</figcaption>
+          <figcaption>Le robot run_chicken repérant un animal en mouvement, détecté par YOLOv8</figcaption>
+        </figure>
+      </div>
+
+      <!-- Étape 5 : Suivi de trajectoire -->
+      <div class="progress-item">
+        <h3>5. Suivi de trajectoire, version Beta</h3>
+        <p>
+          Ici, le robot est capable de suivre un animal via la caméra pour le garder en ligne de mire du canon à eau. 
+          L'asservissement est aujourd'hui simplement <strong>proportionnel</strong>, ce qui suffit pour des animaux lents comme des poules.
+          Il faudra probablement ajouter une composante <strong>intégrale</strong> et <strong>dérivée</strong> pour les animaux plus rapides (comme un chat).
+          Aujourd'hui la vitesse du robot est bridée pour anticiper les problèmes de latence.
+        </p>
+        <figure>
+          <video controls>
+            <source src="videos/Suivi_trajectoire_beta.webm" type="video/webm" />
+            Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+          </video>
+          <figcaption>Le robot s'assurant de garder l'animal dans son champs de vision</figcaption>
         </figure>
       </div>
 
