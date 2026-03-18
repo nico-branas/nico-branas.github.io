@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nicolas Branas – run_chicken</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
   <header>
     <h1>Nicolas Branas</h1>
-    <p class="subtitle">Projet <strong>Run Chicken</strong> – Canon à eau interdisant l'accès à certaines zones pour certains animaux. 
+    <p class="subtitle">Projet <strong>Run Chicken</strong> – Canon à eau interdisant l'accès à certaines zones pour
+      certains animaux.
       Initialement conçu pour les poules.</p>
   </header>
 
@@ -36,7 +39,8 @@
       <p>
         Le projet est actuellement en <strong>phase de développement sur simulateur</strong> :
         <a href="https://docs.ros.org/en/jazzy/" target="_blank" rel="noopener noreferrer">ROS2 Jazzy</a> et
-        <a href="https://gazebosim.org/docs/harmonic/getstarted/" target="_blank" rel="noopener noreferrer">Gazebo Harmonic</a>.
+        <a href="https://gazebosim.org/docs/harmonic/getstarted/" target="_blank" rel="noopener noreferrer">Gazebo
+          Harmonic</a>.
         <strong>(Il est donc codé en C++ et Python)</strong>
       </p>
 
@@ -72,16 +76,31 @@
 
       <!-- Étape 2 : Bridge ROS2 / Gazebo -->
       <div class="progress-item">
-        <h3>2. Communication ROS2 ↔ Gazebo via un bridge</h3>
+        <h3>2. Architecture du projet sur ROS2</h3>
         <p>
-          La simulation Gazebo communique avec ROS2 via un <strong>bridge</strong> bidirectionnel :
-          les données capteurs (caméra, commandes clavier — et plus tard détecteur de distance et
-          capteur de contact) sont publiées sur des topics Gazebo convertis sur des topics ROS2, tandis qu'inversement, le robot reçoit les
-          commandes en s'abonnant aux topics correspondants.
+          Sur ce graphique on peut constater qu'aujourd'hui l'architecture du projet est divisée en deux sous systèmes
+          principaux:
+        <ul>
+          <li><strong>/perception</strong> qui analyse les images reçues, détecte les cibles et propose des trajectoires
+            à suivre.</li>
+          <li><strong>/control</strong> qui commande le robot en fonction des données reçu par le clavier ou par
+            <strong>/perception</strong>.</li>
+        </ul>
+      </p>
+      <p>Ros2 contrôle également un élément de la simulation <strong>/horse</strong>, qui va permettre de tester le suivi
+        d'objet.</p>
+        
+
+        <p>La simulation Gazebo communique avec ROS2 via un <strong>bridge</strong> bidirectionnel
+        (<strong>/ros_gz_bridge</strong>):
+        les données capteurs (caméra et commandes clavier) sont publiées sur des topics Gazebo convertis en topics ROS2,
+        tandis qu'inversement,
+        Gazebo reçoit les commandes en s'abonnant aux topics correspondants.
+        <br>
         </p>
         <figure>
           <img src="images/rqt_graph.png" alt="Graphe RQT montrant les topics ROS2" />
-          <figcaption>Graphe RQT représentant les topics ROS2 échangés entre Gazebo et les nœuds de contrôle</figcaption>
+          <figcaption>Graphe RQT représentant les topics et noeuds ROS2</figcaption>
         </figure>
       </div>
 
@@ -93,8 +112,8 @@
         <p>
           J'ai intégré le modèle d'intelligence artificielle <strong>YOLOv8</strong> pour
           reconnaître les animaux en temps réel et récupérer des données utiles (position sur
-          l'image, boîte englobante…) grâce à <strong>OpenCV</strong>. Il existe des versions plus récentes de YOLO, 
-          mais le projet ayant pour vocation d'être importé sur <strong>Raspberry Pi</strong>, 
+          l'image, boîte englobante…) grâce à <strong>OpenCV</strong>. Il existe des versions plus récentes de YOLO,
+          mais le projet ayant pour vocation d'être importé sur <strong>Raspberry Pi</strong>,
           j'ai préféré éviter les modèles les plus lourds.
         </p>
         <figure>
@@ -116,7 +135,8 @@
           dans Gazebo. Pour ce test, un <strong>cheval</strong> a été utilisé à la place d'une poule
           (un modèle de cheval étant disponible dans <strong>Gazebo Fuel</strong>), afin de vérifier que le robot
           est bien capable de <strong>suivre un animal en mouvement</strong>.
-          <br><em>On observe une légère latence de la détection d'image, mais elle reste acceptable pour le suivi en temps réel. 
+          <br><em>On observe une légère latence de la détection d'image, mais elle reste acceptable pour le suivi en
+            temps réel.
             Par contre, la latence qu'on observe dans la simulation est due à la capture vidéo.</em>
         </p>
         <figure>
@@ -132,9 +152,11 @@
       <div class="progress-item">
         <h3>5. Suivi de trajectoire, version Beta</h3>
         <p>
-          Ici, le robot est capable de suivre un animal via la caméra pour le garder en ligne de mire du canon à eau. 
-          L'asservissement est aujourd'hui simplement <strong>proportionnel</strong>, ce qui suffit pour des animaux lents comme des poules.
-          Il faudra probablement ajouter une composante <strong>intégrale</strong> et <strong>dérivée</strong> pour les animaux plus rapides (comme un chat).
+          Ici, le robot est capable de suivre un animal via la caméra pour le garder en ligne de mire du canon à eau.
+          L'asservissement est aujourd'hui simplement <strong>proportionnel</strong>, ce qui suffit pour des animaux
+          lents comme des poules.
+          Il faudra probablement ajouter une composante <strong>intégrale</strong> et <strong>dérivée</strong> pour les
+          animaux plus rapides (comme un chat).
           Aujourd'hui la vitesse du robot est bridée pour anticiper les problèmes de latence.
         </p>
         <figure>
@@ -152,14 +174,14 @@
     <section id="contact">
       <h2>Contact</h2>
       <p> <strong>
-        Nicolas BRANAS
-        <br>
-        Ingénieur en Robotique
-        <br>
-        nico.branas@gmail.com
-        <br>
-        06 58 40 83 90
-      </strong>
+          Nicolas BRANAS
+          <br>
+          Ingénieur en Robotique
+          <br>
+          nico.branas@gmail.com
+          <br>
+          06 58 40 83 90
+        </strong>
       </p>
     </section>
 
@@ -170,4 +192,5 @@
   </footer>
 
 </body>
+
 </html>
