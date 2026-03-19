@@ -46,10 +46,10 @@
 
       <h3>Etapes de développement à venir</h3>
       <ul class="steps-list">
-        <li>Ajout de divers capteurs et actionneurs</li>
+        <li>Intégration sur <strong>Raspberry Pi</strong></li>
         <li>Conception du prototype sur <strong>Solidworks</strong></li>
         <li>Impression <strong>3D</strong> du châssis et des pièces mécaniques</li>
-        <li>Réalisation d'un prototype physique avec un <strong>Raspberry Pi</strong></li>
+        <li>Réalisation d'un prototype physique</li>
       </ul>
     </section>
 
@@ -150,14 +150,16 @@
 
       <!-- Étape 5 : Suivi de trajectoire -->
       <div class="progress-item">
-        <h3>5. Suivi de trajectoire, version Beta</h3>
+        <h3>5. Suivi de trajectoire</h3>
         <p>
           Ici, le robot est capable de suivre un animal via la caméra pour le garder en ligne de mire du canon à eau.
-          L'asservissement est aujourd'hui simplement <strong>proportionnel</strong>, ce qui suffit pour des animaux
-          lents comme des poules.
-          Il faudra probablement ajouter une composante <strong>intégrale</strong> et <strong>dérivée</strong> pour les
-          animaux plus rapides (comme un chat).
-          Aujourd'hui la vitesse du robot est bridée pour anticiper les problèmes de latence.
+          L'asservissement est aujourd'hui simplement <strong>proportionnel</strong>, 
+          ce qui est largement suffisant pour notre besoin.
+          Je pourrais ajouter une composante <strong>intégrale</strong> et <strong>dérivée</strong> 
+          pour rendre le suivi de trajectoire plus robuste malgré tout, mais aujourd'hui ce qui le limite sa précision n'est pas 
+          l'algorithme de suivi de trajectoire, mais une latence d'environ 140ms entre la capture de l'image et l'arrivée à 
+          la phase de traitement et d'une deuxième latence de 180ms liée à la reconnaissance d'image relativement 
+          gourmande en temps de calcul.
         </p>
         <figure>
           <video controls>
